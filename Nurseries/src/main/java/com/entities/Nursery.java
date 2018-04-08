@@ -46,4 +46,34 @@ public class Nursery implements java.io.Serializable {
 		this.passwd = passwd;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((nurseryName == null) ? 0 : nurseryName.hashCode());
+		result = prime * result + ((passwd == null) ? 0 : passwd.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Nursery other = (Nursery) obj;
+		if (nurseryName == null) {
+			if (other.nurseryName != null)
+				return false;
+		} else if (!nurseryName.equals(other.nurseryName))
+			return false;
+		if (passwd == null) {
+			if (other.passwd != null)
+				return false;
+		} else if (!passwd.equals(other.passwd))
+			return false;
+		return true;
+	}
 }

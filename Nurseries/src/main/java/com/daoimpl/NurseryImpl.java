@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.daoapi.NurseryDao;
 import com.entities.Nursery;
 
-@Repository
+@Repository("NurseryDao")
 @Transactional
 public class NurseryImpl implements NurseryDao {
 
